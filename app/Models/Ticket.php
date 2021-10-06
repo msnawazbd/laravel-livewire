@@ -5,14 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Comment extends Model
+class Ticket extends Model
 {
-    /*use HasFactory;*/
+    // use HasFactory;
 
     protected $fillable = [
         'user_id',
-        'ticket_id',
-        'message'
+        'ticket_name'
     ];
 
     public function user_info()
@@ -20,8 +19,8 @@ class Comment extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function ticket_info()
+    public function comments_info()
     {
-        return $this->belongsTo(Ticket::class, 'ticket_id');
+        return $this->hasMany(Comment::class, 'ticket_id');
     }
 }

@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 pb-3">
             <div class="card">
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
@@ -16,6 +16,12 @@
 
                     {{ __('You are logged in!') }}
                 </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="row justify-content-center">
+                <div class="col-md-6"><livewire:ticket/></div>
+                <div class="col-md-6"><livewire:comment/></div>
             </div>
         </div>
     </div>
